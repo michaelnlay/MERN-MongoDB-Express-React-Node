@@ -4,7 +4,7 @@
 // Now that we understand using rest and spread we can work it into our destructuring. Remembering our array example from the destructuring chapter we wanted to extract the first couple animals from our list.
 
 const animals = ["horse", "dog", "fish", "cat", "bird"];
-const [firstAnimal, secondAnimal] = animals;
+const [firstAnimal, secondAnimal] = animals; // this is destrcturing from an array
 
 // If we want the remaining animals, use a rest pattern at the end of the assignment.
 
@@ -36,6 +36,23 @@ const person = {
   createdAt: 1543945177623,
 };
 
+//this is not making a copy bc it will just reference the same memory locaiton as person
+let anotherPerson = person;
+
+console.log("person first name is:" + person.firstName);
+console.log("AnotherPerson first name is:" + anotherPerson.firstName);
+
+//this is the way to copying thing
+let { ...personCopy } = person;
+console.log("person first name is:" + person.firstName);
+console.log("AnotherPerson first name is:" + anotherPerson.firstName);
+
+person.firstName = "Damian";
+console.log("person first name is:" + person.firstName);
+console.log("AnotherPerson first name is:" + anotherPerson.firstName);
+
+console.log(personCopy);
+
 //   Grabbing firstName and lastName from person is easy, along with assigning all other properties to a 'catchall'.
 const { firstName, lastName, ...attributes } = person;
 
@@ -44,7 +61,7 @@ const personCopy = { ...person };
 
 //There are some limitations. The copy is shallow, so any complex or nested structures with objects references will still point to the same object. We'll use our person objects to demonstrate.
 const personCopy = { ...person };
-personCopy === person;
+personCopy === person; //3 equal sign is e
 // => false
 personCopy.addresses === person.addresses;
 // => true
