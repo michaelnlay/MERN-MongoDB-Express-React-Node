@@ -13,4 +13,16 @@ const user1 = {
         email: "kermit@sesame.org"
     }
     
+/*
+Nesting objects is an essential concept to master. We may store any data we like within an object, even another object! As we nest more and more objects, we may wonder how so much memory can be stored in one object. It's actually pretty interesting how the memory is allocated. The nested object gets its own separate place in memory. The outer object then points to that memory address. Examine the code below and visualize user1's friend as occupying a location in memory apart from where user1 is stored. Though it looks like we're storing the friend within user1, what we're really storing in user1 is just the address in memory where the friend object is stored.
+*/
+
+const user1 = {
+        name: "Kermit",
+        email: "kermit@sesame.org",
+        friend: {
+            name: "Miss Piggy",
+            email: "piggy@sesame.org"
+        }
+    }
     
