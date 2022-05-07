@@ -1,3 +1,8 @@
+# Used function component useState to store value
+## When user input the value, the information on the bottom will reflect as its change. Image below.
+
+![alt text](https://github.com/michaelnlay/MERN-MongoDB-Express-React-Node/blob/main/React/Learnings/09-pet-form/cutedog.JPG?raw=true)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
