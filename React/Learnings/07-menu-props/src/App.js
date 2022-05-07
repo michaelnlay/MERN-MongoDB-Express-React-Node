@@ -11,21 +11,24 @@ function App() {
       <Menu
         name={"Calamari"}
         price={9}
-        calories={500}
-        description={"Its is yummy"}
-      ></Menu>
+        calories={500}>
+        <p>Description: Its fried squid with basil</p>
+        <p><em>Contains Wheat and Seafood</em></p>
+      </Menu>
       <Menu
         name={"Sushi"}
         price={6}
-        calories={100}
-        description={"Its sushi"}
-      ></Menu>
+        calories={100}>
+        <p>Description:sushi is yummy!</p>
+        <p><em>This can be anything that work under the this.props.children that list on the Menu.jsx</em></p>
+      </Menu>
       <Menu
         name={"Chicken Wing"}
         price={10}
-        calories={1500}
-        description={"I love it"}
-      ></Menu>
+        calories={1500}>
+        <p>Description:This can be anything that work under the this.props.children that list on the Menu.jsx</p>
+        <p><em>This can be anything that work under the this.props.children that list on the Menu.jsx</em></p>
+      </Menu>
     </div>
   );
 }
