@@ -17,7 +17,8 @@ function App() {
        <p>Descritpion: Hello!</p> 
       </Menu>
       <Menu name={"Sushi"} price={25} calories={10}>
-       <p>Description: Yummy!</p> 
+        <p>Description: Yummy!</p> 
+        
       </Menu>
     </div>
   );
