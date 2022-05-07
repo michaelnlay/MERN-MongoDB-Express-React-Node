@@ -2,6 +2,8 @@
 ![alt text](https://github.com/michaelnlay/MERN-MongoDB-Express-React-Node/blob/main/React/Assignments/03-propup/propit.JPG?raw=true)
 
 #Assignment Put it together
+![alt text](https://github.com/michaelnlay/MERN-MongoDB-Express-React-Node/blob/main/React/Assignments/03-propup/userCard.JPG?raw=true)
+
 
 
 
