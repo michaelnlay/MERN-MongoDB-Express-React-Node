@@ -1,1 +1,2 @@
-https://github.com/michaelnlay/MERN-MongoDB-Express-React-Node/blob/main/React/Assignments/06-moreforms/userinput.JPG
+
+![alt text](https://github.com/michaelnlay/MERN-MongoDB-Express-React-Node/blob/main/React/Assignments/06-moreforms/userinput.JPG?raw=true)
