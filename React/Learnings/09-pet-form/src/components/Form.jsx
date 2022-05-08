@@ -16,7 +16,18 @@ const Form = () => {
     //secondword is the NAME OF THE FUNCTION that can modify the STATE variable 
     //inside the () is your STARTING VALUE
 
+    // const showNameError = () => {
+    //     if (name.length < 3) {
+    //         return <p>Name must be at least 3 characters!</p>
+    //     } else {
+    //         return null;
+    //     }
 
+    // }
+    //use TERNARY instead of if statement below
+    
+    let currentDate = new Date();
+    let formDate = new Date(date);
 
     return (
         <>
@@ -24,11 +35,17 @@ const Form = () => {
             <form>
                 <div className="form-group">
                     <label htmlFor="">Name:</label>
-                    <input type="text" onChange={(e)=>setName(e.target.value)} name="" id="" className="form-control"></input>
+                    <input type="text" onChange={(e) => setName(e.target.value)} name="" id="" className="form-control"></input>
+                    {
+                        name.length<3?<p className="text-danger">Name must be at least 3 characters!</p>:null
+                    }
                 </div>
                 <div className="form-group">
                     <label htmlFor="">Age:</label>
-                    <input type="text" onChange={(e)=>setAge(e.target.value)} name="" id="" className="form-control"></input>
+                    <input type="text" onChange={(e) => setAge(e.target.value)} name="" id="" className="form-control"></input>
+                    {
+                        age<1?<p className="text-danger">Mininum age of 1 is required</p>:null
+                    }
                 </div>
                 <div className="form-group">
                     <label htmlFor="">Type:</label>
@@ -40,7 +57,13 @@ const Form = () => {
                 </div>
                 <div className="form-group">
                     <label htmlFor="">Appointment Date:</label>
-                    <input type="date" onChange={(e)=>setDate(e.target.value)} name="" id="" className="form-control"></input>
+                    <input type="date" onChange={(e) => setDate(e.target.value)} name="" id="" className="form-control"></input>
+                    {
+                        date.length < 1 ? <p className="text-danger">Date is required</p> : null
+                    }
+                    {
+                        formDate<currentDate? <p className="text-danger">Date cannot be past</p> :null
+                    }
                 </div>
 
                 <div className="form-group">
