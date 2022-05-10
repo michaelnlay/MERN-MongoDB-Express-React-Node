@@ -1,0 +1,38 @@
+.App {
+  text-align: center;
+}
+
+.pet-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.pet-card {
+  border: 5px solid black 50%;
+}
+
+/* body {
+  background-image: url(./istockphoto-1213114893-612x612.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  /* have image be full size of webpage by using 100 instead of contain */
+  /* background-size: 1000; */
+/* }  */
+
+body { 
+  background: url(./istockphoto-1213114893-612x612.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: rgb(0, 0, 0, 0.5);
+
+}
+
+.box {
+
+  color: brown;
+  font-weight: bolder;
+} 
+
