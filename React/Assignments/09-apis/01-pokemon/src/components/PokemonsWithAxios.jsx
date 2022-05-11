@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import axios from "axios";
 
-const Pokemons = () => {
+const PokemonsWithAxios = () => {
   //create state variable to store all the pokemons in that we get back
   let [pokemonList, setPokemonList] = useState([]);
 
@@ -8,20 +9,15 @@ const Pokemons = () => {
   const getPokemons = () => {
     console.log("getting pokemon now..");
 
-    //fetch data from API endpoint
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=10000&offset=0")
-      .then((response) => {
-        //this line means whenver the api is done getting back the data
-        return response.json(); //convert the response to json that application can read
-      })
+    axios
+      .get("https://pokeapi.co/api/v2/pokemon?limit=10000&offset=0")
       .then((response) => {
         //this line is what we call callback function
-        console.log("the response is...." + response);
+        console.log("the response is....", response);
         //setPokemonList to be the response
-        setPokemonList(response.results);
+        setPokemonList(response.data.results);
       })
       .catch((err) => {
-        //.catch is for if there is any issue when getting the data
         console.log(err);
       });
   };
@@ -39,4 +35,4 @@ const Pokemons = () => {
   );
 };
 
-export default Pokemons;
+export default PokemonsWithAxios;
