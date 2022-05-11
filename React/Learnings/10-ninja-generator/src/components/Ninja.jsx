@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 
 const NinjaForm = () => {
+
+  //=======================================================
+  //STEP 1 - create state variables 
+  //==================================================
   //create a state variable for each input from the form that we want to collect
   let [name, setName] = useState("");
   let [proPicUrl, setProPickUrl] = useState("");
   let [color, setColor] = useState("");
+  //for callback parameters lecture
+  let [specAttention, setSpecAttention] = useState(false);
 
   //I want the state variable to update their value (setters like setName) whenever the inputs are changed
 
@@ -18,9 +24,11 @@ const NinjaForm = () => {
     e.preventDefault(); //must be the first line of code after the submit handler
     // console.log("submitted!")
 
-    //create a pet object (python dictionary) also called a hashmap
+     //=================================================================================
+    //STEP 2 - create a pet object (python dictionary) also called a hashmap
     //whenever the form is submitted, it creats a pet object for us
-    let pet = { name, proPicUrl, color };
+    //==================================================================================
+    let pet = { name, proPicUrl, color, specAttention };
     console.log("pet looks like this-->", pet);
 
     //to push to list []
@@ -36,6 +44,32 @@ const NinjaForm = () => {
     setProPickUrl("");
     setColor("");
   };
+
+  //function to toggle if the pet needs special attention on from false <-> true and vice versa
+  const toggleAttention = (e, i) => {
+    console.log("toggling pet at index number", i)
+    //we will modify the petList arry at specific index -> i so that the pet at that index has their "eedsspecialatteniion" property change to true/false
+
+    //1. make a opy of petList
+    let [...copyList] = petList; //use copy is for a best practice to modify the list
+    //2. change the pet at the specific index number property for special attention to true/false
+    copyList[i].specAttention = e.target.checked; //will turn true when check or false when uncheck`(prefer method)
+    // copyList[i].specAttention =!copyList[i].specAttention //can also do this 
+    //3. udpate our state variable for petList with modified copy
+    setPetList(copyList);
+
+  }
+   //delete pet
+  const deletePet = (e, i) => {
+    console.log("deleting pet at index", i)
+    //i represents the index number of the pet we want to delete
+    let filteredCopy = petList.filter((pet, idx) => {
+      //inside the filter function, idx repressents the index number of each pet
+      return idx !== i //return back only the pets whose index number does not match the index number of the pet we want to delete
+    })
+    //3. udpate our state variable for petList with modified copy
+    setPetList(filteredCopy);
+  }
 
   return (
     <>
@@ -84,13 +118,18 @@ const NinjaForm = () => {
             {% endfor %}*/}
 
       <div className="pet-list">
+        {/* Warning error: each child in a list should have a unique "key" prop
+        here is to fix have key={i}, in the future it will be DB id# */}
         {petList.map((petObj, i) => {
           return (
             <div
+              key={i}
               className="pet-card"
               style={{ backgroundColor: petObj.color, color: "white", fontSize:20}}
             >
-              <h3>Name: {petObj.name}</h3>
+              <h3 style={{ textDecoration: petObj.specAttention ? "underline" : "none" }}>Name: {petObj.name}</h3>
+              <p> Spec. attention needed?<input type="checkbox" name="" id="" onChange={(e)=>toggleAttention(e,i)}></input></p>
+              <button onClick={(e)=>{deletePet(e,i)} } className="btn btn-danger">Delete</button>
               <p>Belt color: {petObj.color}</p>
               <img
                 src={petObj.proPicUrl}
@@ -98,6 +137,7 @@ const NinjaForm = () => {
                 width="220px"
                 height="230px"
               ></img>
+              
             </div>
           );
         })}
