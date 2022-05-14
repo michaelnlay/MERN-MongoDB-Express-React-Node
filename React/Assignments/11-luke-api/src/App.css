@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+}
+
+body { 
+  background: url(./brian-mcgowan-ggg_B1MeqQk-unsplash.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /* background-color: rgb(0, 0, 0); */
+}
+
+
+
+.orange{
+  color: #ffe300;
+}
+
+.b-text{
+  font-weight: bolder;
+}
