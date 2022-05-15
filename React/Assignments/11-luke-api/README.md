@@ -1,4 +1,4 @@
-#The Star Wars API
+# The Star Wars API
 
 ![starwarsapi](./src/starapi.gif)
 
