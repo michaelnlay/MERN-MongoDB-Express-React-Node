@@ -1,4 +1,4 @@
-## Utitlize postMan to create, update, read and delete contents (jokes)
+## Utitlize PostMan to create, update, read and delete contents (jokes)
 
 ![img](./postMan_all.JPG)
 
