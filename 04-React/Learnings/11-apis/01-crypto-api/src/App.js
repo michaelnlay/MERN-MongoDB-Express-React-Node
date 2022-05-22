@@ -5,8 +5,8 @@ import CoinsWithAxiosAndUseEffect from './components/CoinsWithAxiosAndUseEffect'
 
 function App() {
   return (
-    <div className="App">
-      <h1>Welcome to Cryptocurrencies! </h1>
+    <div className="App container">
+      <h1 className='text-success'>Live Cryptocurrency Table </h1>
       {/* <Coins></Coins> */}
       <CoinsWithAxiosAndUseEffect></CoinsWithAxiosAndUseEffect>
     </div>
