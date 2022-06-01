@@ -27,7 +27,7 @@ function App() {
             <AllAuthors newAuthorToggle={newAuthorToggle}></AllAuthors>
 
           </Route> 
-          <Route eact path="/new">
+          <Route exact path="/new">
             <NewAuthorForm
               newAuthorToggle={newAuthorToggle}
               setNewAuthorToggle={setNewAuthorToggle}

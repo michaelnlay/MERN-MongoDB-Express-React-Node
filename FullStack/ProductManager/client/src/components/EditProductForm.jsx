@@ -28,7 +28,7 @@ const EditProductForm = () => {
   const changeHandler = (e) => {
    
       setProductInfo({
-        ...productInfo, //to show all the productInfo
+        ...productInfo, //to preserve all the object, use spread operator
         [e.target.name]: e.target.value, //reason with the [] if there is a key and a dot.
       });
     

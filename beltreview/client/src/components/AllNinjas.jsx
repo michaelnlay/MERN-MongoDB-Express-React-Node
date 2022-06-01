@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import moment from 'moment';
+import moment from "moment";
 
 const AllNinjas = (props) => {
   //Step 3 - create a state variable to store backend information
@@ -23,7 +23,7 @@ const AllNinjas = (props) => {
       .catch((err) => {
         console.log("error:", err);
       });
-  }, [deleteToggle, props.newNinjaToggle]); 
+  }, [deleteToggle, props.newNinjaToggle]);
 
   //delete
   const deleteNinja = (id) => {
@@ -63,7 +63,10 @@ const AllNinjas = (props) => {
                   Nuber of Projects: {ninjaObj.numProjects}
                 </h6>
                 <p className="card-text">
-                  Graduation Date: {moment.utc(ninjaObj.gradDate.toLocaleString()).format('MMM Do, YYYY')}
+                  Graduation Date:{" "}
+                  {moment
+                    .utc(ninjaObj.gradDate.toLocaleString())
+                    .format("MMM Do, YYYY")}
                 </p>
                 <p className="card-text">
                   Veteran Status:{" "}

@@ -10,6 +10,12 @@ module.exports=(app)=> {
     //route to find all authors
     app.get("/api/authors", AuthorController.findAllAuthors);
 
+    //  route to find all authors with ascending
+    app.get("/api/authors/asc", AuthorController.sortASDAuthors);
+    
+    // route to find all authors with desceding
+    app.get("/api/authors/des", AuthorController.sortDESAuthors);
+
     //route to create a author
     app.post("/api/authors", AuthorController.createAuthor);
 

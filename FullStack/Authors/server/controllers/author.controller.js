@@ -15,6 +15,30 @@ module.exports.findAllAuthors = (req,res) => {
     })
 }    
 
+//sorting authors with ascending
+//Find all authors
+module.exports.sortASDAuthors = (req,res) => {
+    Author.find().sort({author:1}) //1 for asd and -1 for descending //pass object documentary of mongoose table (author) 
+        .then(allAuthors => {
+            res.json({results:allAuthors})
+        })
+        .catch(err => {
+            res.json({ msg: "Something went wrong", error: err })
+    })
+}    
+
+//sorting authors with desceding
+//Find all authors
+module.exports.sortDESAuthors = (req,res) => {
+    Author.find().sort({author:-1}) //1 for asd and -1 for descending //pass object documentary of mongoose table (author) 
+        .then(allAuthors => {
+            res.json({results:allAuthors})
+        })
+        .catch(err => {
+            res.json({ msg: "Something went wrong", error: err })
+    })
+}   
+
 //Create a author
 module.exports.createAuthor = (req, res) => {
     //req.body represents form information
